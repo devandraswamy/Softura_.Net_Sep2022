@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login Form</title>
+
+    <style>
+        .header{
+            background-color:blueviolet;
+            color:white;
+            padding:30px;
+           
+            text-align:center
+        }
+        .left{
+            background-color:aqua;
+            width:20%;
+            height:500Px;
+        }
+
+
+        .row {
+            display: flex;
+            display: -webkit-flex;
+        }
+        .column1{
+            background-color:aqua;
+            height:500px;
+            width:30%;
+        }
+        .column2 {
+            background-color: white;
+            height: 500px;
+            width: 40%;
+        }
+        .column3 {
+            background-color: aqua;
+            height: 500px;
+            width: 30%;
+        }
+        .column2 {
+            background-color: aqua;
+        }
+        .row1 input{
+            width:50%;
+            height:50px;
+            border:solid thin;
+            margin-left:110px
+            
+     
+        }
+        .row1 label {
+            margin-left: 110px
+        }
+        #op
+        {
+            text-align:center;
+            font-size:40px;
+            color:green;
+        }
+
+        #op1 {
+            text-align: center;
+            font-size: 40px;
+            color: red;
+        }
+
+        .column2 p{
+           
+           
+        }
+
+
+    </style>
+</head>
+<body style="background-color:aliceblue">
+<div  class="header"><h1>Login Form</h1></div>
+   <div class="row">
+       <div class="column1">
+           <h3>
+               Enter user name:dev<br />
+               Enter password:123
+
+           </h3>
+       </div>
+       <div class="column2">
+           <div class="row1">
+               <form>
+                   <div>
+                       <label>Enter User Id</label><br />
+                       <input type="text" id="userid" placeholder="Enter User Id" />
+                   </div>
+                   <div>
+                       <label>Enter user Password</label><br />
+                       <input type="password" id="Pwd" placeholder="Password" />
+                   </div>
+                   <div>
+                         <input type="button" value="Press Me" onclick="call()" />
+                   </div>
+               </form>
+           </div>
+           <p id="op"></p>
+           <p id="op1"></p>
+       </div>
+       <div class="column3"></div>
+   </div>
+    <script>
+        function call() {
+            let a = document.getElementById('userid').value;
+            let b = parseInt(document.getElementById('Pwd')).value;
+
+            if (a == 'dev' || b=='123')
+            {
+                
+                    document.getElementById('op').innerHTML = "Welcome sir";
+                
+            }
+            else {
+                document.getElementById('op1').innerHTML = "Invalid user :(";
+            }
+            try {
+                if (a == "") throw 'Its empty :('
+                if (!isNaN(a)) throw 'It is a number :(';
+                    }
+            catch (err) {
+                document.getElementById('op1').innerHTML = err;
+            }
+
+           }
+    </script>
+</body>
+</html>
