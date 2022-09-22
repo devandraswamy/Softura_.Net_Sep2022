@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form name="form">
+        <h1 style="text-align:center">Form</h1>
+
+        <label>First Name</label>
+        <input type="text" name="fname" id="fname" />
+        <br />
+        <label>Last Name</label>
+        <input type="text" name="lname" id="lname" />
+        <br />
+
+        <hr />
+        <hr />
+        <div>
+            <form name="feedback" action="#" method=post>
+                Your Gender: <input type="radio" name="gender" value="Male"> Male
+                <input type="radio" name="gender" value="Female"> Female
+
+            </form>
+        </div>
+
+
+        <hr />
+        <hr />
+
+        <div>
+
+            <input type="checkbox" id="qual" name="terms" value="Graduation" /><label for="grad">Graduation</label>
+            <input type="checkbox" id="qual1" name="terms" value="post Graduation" /><label for="pgrad"> PostGraduation</label>
+            <input type="checkbox" id="qual2" name="terms" value="Doctrate" /><label for="doc">Doctrate</label>
+
+            <br />
+            <input type="button" value="submit" onclick="call()" />
+    </form>
+
+    </div>
+
+    </form>
+
+
+    <hr />
+    <hr />
+    <hr />
+    <h1>Data</h1>
+    <p id="op"></p>
+    <p id="op1"></p>
+    <script>
+
+        function call() {
+
+            a = document.getElementById('fname').value;
+            b = document.getElementById('lname').value;
+
+
+            try {
+
+                if (a == "") throw 'First Name not entered';
+                if (!isNaN(a)) throw ' first Name Cannot be a number';
+                if (b == "") throw 'last name not entered';
+                if (!isNaN(b)) throw 'last Name Cannot be a Number';
+
+            }
+            catch (err) {
+                document.getElementById('op').innerHTML = err;
+
+            }
+
+
+            ErrorText = "";
+            if ((form.gender[0].checked == false) && (form.gender[1].checked == false)) {
+                document.getElementById('op1').innerHTML = "Please choose your Gender: Male or Female";
+                return false;
+            }
+            if (ErrorText = "") { form.submit() }
+
+
+
+        }
+
+
+
+    </script>
+    <script LANGUAGE="JavaScript">
+        function ValidateForm(form) {
+
+        }
+    </script>
+</body>
+</html>
