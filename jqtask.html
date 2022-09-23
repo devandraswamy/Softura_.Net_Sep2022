@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name Of Item</td>
+            <td>Price</td>
+        </tr>
+        <tr>
+            <td>chocolate</td>
+            <td>  <input type="text" id="no1" onkeyup="addtwo()" /><br /></td>
+        </tr>
+        <tr>
+            <td>Cookies</td>
+            <td>  <input type="text" id="no2" onkeyup="addtwo()" /><br /></td>
+        </tr>
+        <tr>
+            <td>Vegetable</td>
+            <td>  <input type="text" id="no3" onkeyup="addtwo()" /><br /></td>
+        </tr>
+        <tr>
+            <td>Biscuits</td>
+            <td>  <input type="text" id="no4" onkeyup="addtwo()" /><br /></td>
+        </tr>
+        <tr>
+            <td>cupcake</td>
+            <td>  <input type="text" id="no5" onkeyup="addtwo()" /><br /></td>
+        </tr>
+
+    </table>
+
+    <p> Here The Total Amout You Need To pay <span id="res"></span></p>
+
+    <script>
+        $(document).ready(function () {
+            addtwo();
+        });
+
+        function addtwo() {
+            var n1 = $('#no1').val();
+            if (!n1) {
+                n1 = 0;;
+            }
+
+            var n2 = $('#no2').val();
+            if (!n2) {
+                n2 = 0;
+            }
+            var n3 = $('#no3').val();
+            if (!n2) {
+                n2 = 0;
+            }
+
+            var n4 = $('#no4').val();
+            if (!n2) {
+                n2 = 0;
+            }
+            var n5 = $('#no5').val();
+            if (!n2) {
+                n2 = 0;
+            }
+
+            sum = Number(n1) + Number(n2) + Number(n3) + Number(n4) + Number(n5);
+            $('#res').html(sum);
+        }
+
+    </script>
+
+</body>
+</html>
