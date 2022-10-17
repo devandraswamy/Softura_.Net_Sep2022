@@ -1,0 +1,77 @@
+﻿@model Airwing.Models.Airwingusertb
+
+@{
+    ViewData["Title"] = "Userlogin";
+}
+
+
+
+<div>
+    <h3 style="text-align:center;color:">Travel Tour dream Destination</h3>
+</div>
+
+
+    <div class="row" style="display:flex">
+
+    <div class="col-md-4"><img src="/image/360_f_536252772_wmkuzpuosbxehaojvk5p8jlbh6rpum6o-removebg-preview.png" style="margin-top:60px" /></div>
+    <div class="col-md-4">
+        
+    </div>
+    <div class="col-md-4" style="background-color:#9AC1E2; margin-top:100px;border-radius:50px">
+            <form asp-action="Userlogin" style="margin-top:80px">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @*<div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                <label asp-for="ContacNumber" class="control-label"></label>
+                <input asp-for="ContacNumber" class="form-control" />
+                <span asp-validation-for="ContacNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                </div>*@
+                <div class="form-group">
+                    <label asp-for="Userloginid" placeholder="Userid" class="control-label"> Enter Your Login id</label>
+              
+                    <input asp-for="Userloginid" class="form-control" style="border-radius:50px" />
+                    <span asp-validation-for="Userloginid" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label">Password</label>
+                <input asp-for="Password" type="password" class="form-control" style="border-radius:50px" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+               
+                <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary form-control" style="border-radius:50px" />
+                </div>
+          
+            </form>
+        </div>
+      
+    </div>
+
+
+
+    @*<div>
+    <a asp-action="Index">Back to List</a>
+    </div>*@
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
+
+

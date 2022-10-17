@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Airwing.Models.Flightdatatb>
+
+@{
+    ViewData["Title"] = "search";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        
+</div>
+    <div class="col-md-4">
+        <form asp-controller="fLIGHT" asp-action="search">
+            <p>
+                <i class="bi bi-geo-alt"></i>
+                <select name="searchString" class="form-control">
+                    <option value="none">Select From Location</option>
+                    <option value="chennai">chennai</option>
+                    <option value="delhi">delhi</option>
+                    <option value="	trichy">	trichy</option>
+                    <option value="kanyakumari">kanyakumari</option>
+                </select>
+
+                <select name="searchString2" class="form-control">
+                    <option value="none">Select To location</option>
+                    <option value="vizag">vizag</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="srilanka">srilanka</option>
+                    <option value="madurai">madurai</option>
+
+                </select>
+
+                @* <input type="text" name="SearchString"  />*@
+                <button type="submit" style="background-color:#9AC1E2 " class="btn form-control">Search</button>
+
+            </p>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="text-align:center"><h1>Flight Availability</h1></div>
+    <div class="col-md-4"></div>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Flightname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flightfrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flightto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightSeats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightFare)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+
+    <tr>
+
+        <td>
+    @Html.DisplayFor(modelItem => item.Flightname)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => item.Flightfrom)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => item.Flightto)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => item.FlightSeats)
+</td>
+<td>
+    @Html.DisplayFor(modelItem => item.FlightFare)
+</td>
+<td>
+                    <a asp-action="details" style="background-color:#9AC1E2 " class="btn" asp-route-id="@item.Fid">Book</a>
+   
+
+</td>
+
+
+    </tr>
+}
+        
+    </tbody>
+</table>

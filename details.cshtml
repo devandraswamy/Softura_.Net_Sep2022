@@ -1,0 +1,80 @@
+﻿@model Airwing.Models.Flightdatatb
+
+@{
+    ViewData["Title"] = "details";
+}
+
+<div style="padding:20px;text-align:center">
+    <h1>Few More Steps To Travel To Your dream destination</h1>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <dl class="row" style="padding:20px">
+            <dt class="col-sm-2">
+
+                @Html.DisplayNameFor(model => model.Flightname)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Flightname)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Flightfrom)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Flightfrom)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Flightto)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Flightto)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FlightSeats)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FlightSeats )
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FlightFare)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FlightFare)
+            </dd>
+        </dl>
+    </div>
+  
+
+   
+    
+    <div class="col-md-4">
+        <p>
+            No Of Seates You Need To Book
+
+            <form asp-action="payment" asp-controller="Flight">
+
+                <input type="number" class="form-control" style="width:250px" />
+                <input type="submit" class="form-control" style="background-color:#9AC1E2;width:250px" value="PayNow" class="btn " />
+
+                <a asp-action="search" asp-controller="Flight" class="btn btn-danger" style="width:250px">Cancle</a>
+               
+            </form>
+        </p>
+    </div>
+  
+   
+   
+   
+   
+
+
+</div>
+
+
+@*<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Fid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+*@
